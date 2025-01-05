@@ -1,0 +1,23 @@
+Several workarounds exist to address the incompatibility of `filter: blur()` on SVG elements:
+
+**1. Using a `<foreignObject>`:**
+
+This approach involves wrapping the SVG content within a `<foreignObject>` element, allowing the CSS filter to apply correctly.
+
+```html
+<div>
+  <foreignObject>
+    <svg width="100" height="100">
+      <!-- SVG content here -->
+    </svg>
+  </foreignObject>
+</div>
+```
+
+**2. Using JavaScript-based blurring:**
+
+In cases where `<foreignObject>` is not suitable, consider using a JavaScript library like `html2canvas` to render the SVG to a canvas and then apply a blur using the canvas API.
+
+**3. Server-side SVG rendering and blurring:**
+
+As a last resort, generating the blurred SVG on the server-side before serving it to the client can resolve the issue.
